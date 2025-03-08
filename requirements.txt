@@ -1,0 +1,10 @@
+langchain
+langgraph
+langchain-community
+langchain-huggingface
+langchain-groq
+langchain-core
+fastapi
+uvicorn
+dotenv
+pydantic
