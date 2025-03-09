@@ -63,13 +63,13 @@ workflow = StateGraph(MessagesState)
 workflow.add_node("Agent", call_model)
 workflow.add_edge(START, "Agent")
 workflow.add_edge("Agent", END)
-app = workflow.compile(checkpointer=memory)
+app = workflow.compile()
 config = {"configurable": {"thread_id": "1"}}
 
 
 def therapy_bot(query):
     response = app.invoke({"messages": [
-        system_message, query]}, config)
+        system_message, query]})
     return response['messages'][-1].content
 
 
